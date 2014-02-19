@@ -7,10 +7,8 @@ class PigLatinTranslator
       return word[word.index("y"),word.length] + word[0,word.index("y")] + "ay"
     elsif /[aeiou]/.match(word[0])
       return word + "way"
-    elsif
-      return + "ay"
-
-
+    elsif /[^aeiou]/.match(word[0])
+      return word[word.index(/[aeiou]/),word.length] + word[0,word.index(/[aeiou]/)] + "ay"
     end
   end
 end
